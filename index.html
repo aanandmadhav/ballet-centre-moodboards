@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Ballet Centre · Website Mood Boards</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#1b1622;--muted:#6b6377}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:#efeae2;-webkit-font-smoothing:antialiased;line-height:1.55}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+  .top{display:flex;align-items:center;gap:16px;padding:26px 0}
+  .top img{height:56px}
+  .top .who{margin-left:auto;text-align:right;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+
+  .lede{padding:40px 0 50px;border-bottom:1px solid rgba(27,22,34,.12)}
+  .lede .lbl{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .lede h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(40px,6.5vw,68px);line-height:1;margin:16px 0 14px}
+  .lede h1 em{font-style:italic}
+  .lede p{max-width:640px;color:#4a4356;font-size:16px}
+
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:50px 0}
+  @media(max-width:760px){.cards{grid-template-columns:1fr}}
+  .card{display:block;text-decoration:none;color:inherit;border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 12px 34px rgba(27,22,34,.1);transition:transform .18s ease,box-shadow .18s ease}
+  .card:hover{transform:translateY(-4px);box-shadow:0 20px 44px rgba(27,22,34,.16)}
+  .card .ph{height:280px;overflow:hidden}
+  .card .ph img{width:100%;height:100%;object-fit:cover;display:block}
+  .card .body{padding:22px 24px 26px}
+  .card .tag{font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-weight:700}
+  .card h2{font-size:30px;margin:8px 0 6px}
+  .card.a h2{font-family:'Cormorant Garamond',serif;font-weight:600}
+  .card.b h2{font-family:'Big Shoulders Display';font-weight:800;text-transform:uppercase;letter-spacing:.02em}
+  .card p{font-size:14px;color:#5a5368}
+  .card .go{margin-top:14px;font-size:13px;font-weight:600;color:#7B3FF2}
+
+  .swatch{display:flex;gap:6px;margin-top:14px}
+  .swatch span{width:22px;height:22px;border-radius:5px}
+
+  footer{padding:26px 0 60px;font-size:12px;color:var(--muted);border-top:1px solid rgba(27,22,34,.12)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="top">
+    <img src="images/logo.webp" alt="The Ballet Centre logo">
+    <div class="who">The Ballet Centre · Dubai<br>New Website · Design Direction</div>
+  </div>
+
+  <div class="lede">
+    <div class="lbl">Mood Boards · Two Directions</div>
+    <h1>Choose the <em>feeling</em>,<br>then we build the site.</h1>
+    <p>Two contrasting directions for the new website, both built on the existing logo and its blue-to-purple gradient. Open each, live with it for a minute, and tell us which one is The Ballet Centre. We take the winner into the full design system and the WordPress build.</p>
+  </div>
+
+  <div class="cards">
+    <a class="card a" href="direction-a-timeless-stage.html">
+      <div class="ph"><img src="images/a-hero-v1.png" alt="Timeless Stage direction"></div>
+      <div class="body">
+        <div class="tag">Direction A</div>
+        <h2>Timeless Stage</h2>
+        <p>Heritage and prestige. Ivory light, a classic serif voice, the gradient kept as a quiet accent. Calm and premium.</p>
+        <div class="swatch"><span style="background:#FBF9F5;border:1px solid #ddd"></span><span style="background:#3A2A4D"></span><span style="background:#7C5CBF"></span><span style="background:#AD67D5"></span><span style="background:#C9A24B"></span></div>
+        <div class="go">Open Direction A →</div>
+      </div>
+    </a>
+    <a class="card b" href="direction-b-the-programme.html">
+      <div class="ph"><img src="images/b-hero-v1.png" alt="The Programme direction"></div>
+      <div class="body">
+        <div class="tag">Direction B</div>
+        <h2>The Programme</h2>
+        <p>Bold and theatrical. A performing-arts season where every discipline is an act with its own saturated colour. Confident and alive.</p>
+        <div class="swatch"><span style="background:#E23A6D"></span><span style="background:#E85D0A"></span><span style="background:#D12A2A"></span><span style="background:#2F5DF0"></span><span style="background:#0E8F63"></span><span style="background:#7B3FF2"></span></div>
+        <div class="go">Open Direction B →</div>
+      </div>
+    </a>
+  </div>
+
+  <footer>The Ballet Centre · Performing Art School · Est 1986 &nbsp;·&nbsp; Prepared by Yamu Media &nbsp;·&nbsp; Mood boards v1</footer>
+
+</div>
+</body>
+</html>

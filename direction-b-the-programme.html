@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Direction B — The Programme · The Ballet Centre</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bone:#F3ECDD; --paper:#FBF7EE; --ink:#17121C;
+    --ballet:#E23A6D; --dance:#E85D0A; --drama:#D12A2A;
+    --music:#2F5DF0; --tkd:#0E8F63; --art:#7B3FF2;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--bone);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+  .display{font-family:'Big Shoulders Display',sans-serif;text-transform:uppercase}
+  .serif{font-family:'Instrument Serif',serif}
+  .lbl{font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;font-weight:700;opacity:.55}
+
+  .bar{display:flex;align-items:center;gap:16px;padding:20px 28px;max-width:1120px;margin:0 auto;border-bottom:1.5px solid rgba(23,18,28,.14)}
+  .bar img{height:50px}
+  .bar .meta{margin-left:auto;text-align:right}
+  .bar .meta b{font-family:'Big Shoulders Display';font-weight:800;font-size:19px;letter-spacing:.03em;display:block}
+  .bar .meta span{font-size:10px;letter-spacing:.22em;text-transform:uppercase;opacity:.55}
+
+  /* hero */
+  .hero{position:relative}
+  .hero img{width:100%;height:min(74vh,660px);object-fit:cover;display:block}
+  .hero .overlay{position:absolute;left:0;bottom:0;padding:40px 28px;max-width:1120px;margin:0 auto;left:50%;transform:translateX(-50%);width:100%}
+  .hero .eyebrow{color:#fff;font-size:12px;letter-spacing:.3em;text-transform:uppercase;font-weight:700;margin-bottom:8px;opacity:.95}
+  .hero h1{font-family:'Big Shoulders Display';font-weight:900;text-transform:uppercase;color:#fff;font-size:clamp(58px,11vw,124px);line-height:.8;letter-spacing:.01em;text-shadow:0 4px 30px rgba(0,0,0,.25)}
+  .hero h1 em{font-family:'Instrument Serif';font-style:italic;font-weight:400;text-transform:none}
+
+  section{padding:60px 0}
+  .sec-head{display:flex;align-items:center;gap:18px;margin-bottom:30px}
+  .sec-head h2{font-family:'Big Shoulders Display';font-weight:800;text-transform:uppercase;font-size:30px;letter-spacing:.02em;white-space:nowrap}
+  .sec-head .line{flex:1;height:2px;background:var(--ink);opacity:.85}
+
+  .idea p{font-family:'Big Shoulders Display';font-weight:700;text-transform:uppercase;font-size:clamp(26px,4vw,44px);line-height:1;max-width:960px;letter-spacing:.01em}
+  .idea p em{font-family:'Instrument Serif';font-style:italic;font-weight:400;text-transform:none;letter-spacing:0}
+  .idea .sub{font-family:'Inter';font-weight:400;text-transform:none;font-size:16px;letter-spacing:0;margin-top:18px;max-width:720px;opacity:.8;line-height:1.6}
+
+  /* marquee acts */
+  .acts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .act{border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 8px 26px rgba(23,18,28,.1)}
+  .act .ph{position:relative;height:230px;overflow:hidden}
+  .act .ph img{width:100%;height:100%;object-fit:cover;display:block}
+  .act .foot{display:flex;align-items:center;gap:12px;padding:14px 16px;color:#fff}
+  .act .num{font-family:'Big Shoulders Display';font-weight:800;font-size:26px;line-height:1}
+  .act .nm{font-family:'Big Shoulders Display';font-weight:700;font-size:22px;text-transform:uppercase;letter-spacing:.02em}
+  .act .ds{margin-left:auto;font-size:10.5px;opacity:.85;text-align:right;max-width:46%;line-height:1.3}
+  @media(max-width:880px){.acts{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.acts{grid-template-columns:1fr}}
+
+  /* palette */
+  .pal{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+  .pal .sw{height:96px;border-radius:8px;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:9px;font-size:10px;font-weight:600}
+  .pal .sw b{font-family:'Big Shoulders Display';font-size:13px;font-weight:700;text-transform:uppercase}
+  .neu{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+  .neu div{height:44px;border-radius:8px;display:flex;align-items:center;padding:0 12px;font-size:11px;font-weight:600}
+  @media(max-width:640px){.pal{grid-template-columns:repeat(3,1fr)}}
+
+  /* type */
+  .type{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:center}
+  .type .d{font-family:'Big Shoulders Display';font-weight:900;text-transform:uppercase;font-size:clamp(48px,8vw,86px);line-height:.82}
+  .type .i{font-family:'Instrument Serif';font-style:italic;font-size:clamp(34px,5vw,52px);color:var(--ballet);line-height:1;margin-top:4px}
+  .type .info b{font-family:'Big Shoulders Display';font-size:22px;text-transform:uppercase;letter-spacing:.02em}
+  .type .info div{margin-bottom:20px}
+  .type .info p{font-size:13px;opacity:.7}
+  @media(max-width:760px){.type{grid-template-columns:1fr;gap:24px}}
+
+  /* act index list */
+  .idx .row{display:flex;align-items:center;gap:16px;padding:12px 0;border-top:1.5px solid rgba(23,18,28,.12)}
+  .idx .row:last-child{border-bottom:1.5px solid rgba(23,18,28,.12)}
+  .idx .sq{width:40px;height:40px;border-radius:8px;color:#fff;font-family:'Big Shoulders Display';font-weight:800;font-size:19px;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+  .idx .nm{font-family:'Big Shoulders Display';font-weight:700;font-size:26px;text-transform:uppercase;letter-spacing:.02em}
+  .idx .ds{margin-left:auto;font-size:12px;opacity:.62;text-align:right}
+
+  /* applied */
+  .applied{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+  .pills{display:flex;flex-wrap:wrap;gap:12px}
+  .pill{font-family:'Big Shoulders Display';font-weight:800;text-transform:uppercase;letter-spacing:.04em;font-size:15px;color:#fff;padding:12px 22px;border-radius:5px}
+  .ghost{font-family:'Big Shoulders Display';font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:15px;padding:11px 20px;border:2.5px solid var(--ink);border-radius:5px}
+  .tags .lbl{margin-bottom:12px}
+  .tags p{font-family:'Instrument Serif';font-style:italic;font-size:26px;margin-bottom:6px}
+  @media(max-width:760px){.applied{grid-template-columns:1fr;gap:26px}}
+
+  footer{border-top:2px solid var(--ink);padding:30px 0 60px;font-size:12px;opacity:.7;display:flex;gap:20px;flex-wrap:wrap}
+  footer a{color:var(--music);font-weight:600}
+  .nav-next{margin-left:auto}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <img src="images/logo.webp" alt="The Ballet Centre logo">
+  <div class="meta"><b>THE PROGRAMME</b><span>Direction B · 2 of 2</span></div>
+</div>
+
+<div class="hero">
+  <img src="images/b-hero-v1.png" alt="Dancer leaping against bold colour fields">
+  <div class="overlay">
+    <div class="eyebrow">The 2026 Programme · Est 1986</div>
+    <h1>Six ways<br>to <em>shine</em></h1>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <section class="idea">
+    <div class="sec-head"><h2>The idea</h2><div class="line"></div></div>
+    <p>Not an activity centre — a <em>season</em>. Every discipline is an act with its own colour.</p>
+    <p class="sub">Forty years of curtain calls, reframed as a performing-arts programme. Bold, editorial, theatrical. The colour system does the work: pick an act and its colour follows you through the whole site, from the hero to the timetable to the enrol button.</p>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>The six acts</h2><div class="line"></div></div>
+    <div class="acts">
+      <div class="act"><div class="ph"><img src="images/b-ballet-v1.png" alt="Ballet"></div><div class="foot" style="background:var(--ballet)"><span class="num">01</span><span class="nm">Ballet</span><span class="ds">ISTD graded · ages 2.5+</span></div></div>
+      <div class="act"><div class="ph"><img src="images/b-dance-v1.png" alt="Modern Dance"></div><div class="foot" style="background:var(--dance)"><span class="num">02</span><span class="nm">Dance</span><span class="ds">Lyrical to street</span></div></div>
+      <div class="act"><div class="ph"><img src="images/b-drama-v1.png" alt="Drama"></div><div class="foot" style="background:var(--drama)"><span class="num">03</span><span class="nm">Drama</span><span class="ds">Confidence on & off stage</span></div></div>
+      <div class="act"><div class="ph"><img src="images/b-music-v1.png" alt="Music"></div><div class="foot" style="background:var(--music)"><span class="num">04</span><span class="nm">Music</span><span class="ds">Trinity examinations</span></div></div>
+      <div class="act"><div class="ph"><img src="images/b-taekwondo-v1.png" alt="Taekwondo"></div><div class="foot" style="background:var(--tkd)"><span class="num">05</span><span class="nm">Taekwondo</span><span class="ds">Black-belt instructors</span></div></div>
+      <div class="act"><div class="ph"><img src="images/b-art-v1.png" alt="Art"></div><div class="foot" style="background:var(--art)"><span class="num">06</span><span class="nm">Art</span><span class="ds">Paint · make · play</span></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Palette</h2><div class="line"></div></div>
+    <div class="pal">
+      <div class="sw" style="background:var(--ballet)"><b>Ballet</b>#E23A6D</div>
+      <div class="sw" style="background:var(--dance)"><b>Dance</b>#E85D0A</div>
+      <div class="sw" style="background:var(--drama)"><b>Drama</b>#D12A2A</div>
+      <div class="sw" style="background:var(--music)"><b>Music</b>#2F5DF0</div>
+      <div class="sw" style="background:var(--tkd)"><b>Taekwondo</b>#0E8F63</div>
+      <div class="sw" style="background:var(--art)"><b>Art</b>#7B3FF2</div>
+    </div>
+    <div class="neu">
+      <div style="background:#F3ECDD;color:#8a7a5a;border:1px solid #e0d6c2">Bone · #F3ECDD · page</div>
+      <div style="background:#17121C;color:#fff">Ink · #17121C · type</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Typography</h2><div class="line"></div></div>
+    <div class="type">
+      <div>
+        <div class="d">Take your place</div>
+        <div class="i">on stage this term</div>
+      </div>
+      <div class="info">
+        <div><b>Big Shoulders Display</b><p>Marquee headlines · built for posters and playbills</p></div>
+        <div><b>Instrument Serif</b><p>The graceful italic counterpoint · used on single words</p></div>
+        <div><b>Inter</b><p>Body and interface</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>The system in use</h2><div class="line"></div></div>
+    <div class="idx">
+      <div class="row"><div class="sq" style="background:var(--ballet)">01</div><div class="nm">Ballet</div><div class="ds">rose · #E23A6D</div></div>
+      <div class="row"><div class="sq" style="background:var(--dance)">02</div><div class="nm">Modern Dance</div><div class="ds">tangerine · #E85D0A</div></div>
+      <div class="row"><div class="sq" style="background:var(--drama)">03</div><div class="nm">Drama</div><div class="ds">crimson · #D12A2A</div></div>
+      <div class="row"><div class="sq" style="background:var(--music)">04</div><div class="nm">Music</div><div class="ds">cobalt · #2F5DF0</div></div>
+      <div class="row"><div class="sq" style="background:var(--tkd)">05</div><div class="nm">Taekwondo</div><div class="ds">emerald · #0E8F63</div></div>
+      <div class="row"><div class="sq" style="background:var(--art)">06</div><div class="nm">Art</div><div class="ds">violet · #7B3FF2</div></div>
+    </div>
+  </section>
+
+  <section class="applied">
+    <div>
+      <div class="lbl" style="margin-bottom:16px">Buttons carry the act colour</div>
+      <div class="pills">
+        <span class="pill" style="background:var(--ballet)">Book a Free Trial</span>
+        <span class="ghost">View Timetable</span>
+        <span class="pill" style="background:var(--music)">Enrol Now</span>
+      </div>
+    </div>
+    <div class="tags">
+      <div class="lbl">Creative tagline</div>
+      <p>“Find your act.”</p>
+      <p>“Everyone has a stage here.”</p>
+    </div>
+  </section>
+
+  <footer>
+    <div>The Ballet Centre · Performing Art School · Est 1986</div>
+    <div>Mood board · Direction B of 2 · v1</div>
+    <a class="nav-next" href="direction-a-timeless-stage.html">← Direction A · Timeless Stage</a>
+  </footer>
+
+</div>
+</body>
+</html>
