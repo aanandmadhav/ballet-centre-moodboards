@@ -85,7 +85,7 @@
   .whygrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px}
   .wc{background:#fff;border-radius:18px;padding:22px 20px}
   .wc .ic{width:46px;height:46px;border-radius:13px;background:var(--purple);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:14px}
-  .wc:nth-child(2) .ic{background:var(--deep)}.wc:nth-child(3) .ic{background:var(--lite)}.wc:nth-child(4) .ic{background:var(--ink)}
+  .wc:nth-child(2) .ic{background:var(--deep)}.wc:nth-child(3) .ic{background:var(--lite)}.wc:nth-child(4){border:1px solid #f0e6c0}.wc:nth-child(4) .ic{background:var(--yellow)}
   .wc b{font-weight:800;font-size:16px;display:block;margin-bottom:5px}
   .wc p{font-size:13.5px;color:#5f5877}
   @media(max-width:860px){.whygrid{grid-template-columns:repeat(2,1fr)}}
@@ -94,7 +94,7 @@
   /* stats */
   .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
   .stat{background:var(--purple);color:#fff;border-radius:22px;padding:30px 26px}
-  .stat:nth-child(2){background:var(--deep)}.stat:nth-child(3){background:var(--ink)}.stat:nth-child(4){background:var(--lite)}
+  .stat:nth-child(2){background:var(--deep)}.stat:nth-child(3){background:var(--ink)}.stat:nth-child(4){background:var(--yellow);color:var(--ink)}
   .stat .n{font-weight:900;font-size:52px;line-height:1}
   .stat .l{font-size:14px;font-weight:600;opacity:.92;margin-top:6px}
   @media(max-width:860px){.stats{grid-template-columns:repeat(2,1fr)}}
@@ -172,7 +172,7 @@
       <h1>Swap screen time for <em class="s">showtime.</em></h1>
       <p>Ballet, dance, drama, music, taekwondo and art — all under one roof in Dubai, for ages 2.5 to adult. Forty years of turning first classes into standing ovations.</p>
       <div class="btns"><a class="b-p">Book a Free Trial</a><a class="b-g">Explore classes</a></div>
-      <div class="trust">★★★★★ Loved by 1,000+ Dubai families · KHDA approved</div>
+      <div class="trust"><span style="color:var(--yellow);letter-spacing:1px">★★★★★</span> Loved by 1,000+ Dubai families · KHDA approved</div>
     </div>
     <div class="hero-art"><div class="st">FREE<br>TRIAL</div><div class="ph"><img src="images/c-hero-v2.png" alt="joyful dancer"></div></div>
   </div>
