@@ -16,6 +16,13 @@
   body{font-family:'Inter Tight','Inter',system-ui,sans-serif;background:var(--white);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.5}
   .wrap{max-width:1120px;margin:0 auto;padding:0 26px}
   h2,h3,h4{font-family:'Inter Tight'}
+  .topnav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .topnav .in{max-width:1120px;margin:0 auto;display:flex;align-items:center;gap:14px;padding:11px 26px}
+  .topnav .home{font-family:'Inter Tight';font-weight:900;letter-spacing:-.02em;font-size:14px;color:var(--ink);text-decoration:none}
+  .topnav nav{margin-left:auto;display:flex;gap:6px}
+  .topnav a.tab{font-size:13px;font-weight:700;color:var(--muted);text-decoration:none;padding:7px 14px;border-radius:20px}
+  .topnav a.tab:hover{background:var(--lav)}
+  .topnav a.tab.active{background:var(--purple);color:#fff}
 
   /* board header */
   .bhead{padding:32px 0 8px}
@@ -156,6 +163,14 @@
 </style>
 </head>
 <body>
+<header class="topnav"><div class="in">
+  <a class="home" href="round-2.html">The Ballet Centre · Moodboards</a>
+  <nav>
+    <a class="tab" href="round-2.html">Home</a>
+    <a class="tab active" href="purple-bold.html">Style 1 · Bold</a>
+    <a class="tab" href="purple-spectrum.html">Style 2 · Spectrum</a>
+  </nav>
+</div></header>
 <div class="wrap">
 
   <div class="bhead">
@@ -304,7 +319,7 @@
       <div>
         <div class="tcard">
           <img src="images/nat-music-nat.png" alt="music class">
-          <div class="bd3"><span class="badge">Trinity exams</span><b style="display:block;margin-top:8px">Music</b><div class="meta">Private &amp; group · from age 5</div><span class="b-p" style="font-size:13px;padding:10px 18px">Learn more</span></div>
+          <div class="bd3"><span class="badge">Trinity exams</span><b style="display:block;margin-top:8px">Music</b><div class="meta">Private &amp; group · from age 5</div><p style="font-size:13px;color:#5f5877;line-height:1.5;margin:0 0 12px">Internationally qualified teachers, one-to-one or group lessons, with optional Trinity College examinations as your child progresses.</p><span class="b-p" style="font-size:13px;padding:10px 18px">Learn more</span></div>
         </div>
       </div>
     </div>

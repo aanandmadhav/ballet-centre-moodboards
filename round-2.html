@@ -12,6 +12,13 @@
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased;line-height:1.55}
   .wrap{max-width:1080px;margin:0 auto;padding:0 26px}
+  .topnav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid #eee}
+  .topnav .in{max-width:1080px;margin:0 auto;display:flex;align-items:center;gap:14px;padding:11px 26px}
+  .topnav .home{font-family:'Inter Tight';font-weight:900;letter-spacing:-.02em;font-size:14px;color:var(--ink);text-decoration:none}
+  .topnav nav{margin-left:auto;display:flex;gap:6px}
+  .topnav a.tab{font-size:13px;font-weight:600;color:var(--muted);text-decoration:none;padding:7px 14px;border-radius:20px}
+  .topnav a.tab:hover{background:#f2eefc}
+  .topnav a.tab.active{background:var(--violet);color:#fff}
   .top{display:flex;align-items:center;gap:16px;padding:26px 0}
   .top img{height:54px}
   .top .who{margin-left:auto;text-align:right;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
@@ -44,6 +51,14 @@
 </style>
 </head>
 <body>
+<header class="topnav"><div class="in">
+  <a class="home" href="round-2.html">The Ballet Centre · Moodboards</a>
+  <nav>
+    <a class="tab active" href="round-2.html">Home</a>
+    <a class="tab" href="purple-bold.html">Style 1 · Bold</a>
+    <a class="tab" href="purple-spectrum.html">Style 2 · Spectrum</a>
+  </nav>
+</div></header>
 <div class="wrap">
 
   <div class="top">

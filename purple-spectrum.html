@@ -17,6 +17,13 @@
   .wrap{max-width:1120px;margin:0 auto;padding:0 26px}
   .gro{font-family:'Space Grotesk'}
   h1,h2,h3,.gro2{font-family:'Space Grotesk'}
+  .topnav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .topnav .in{max-width:1120px;margin:0 auto;display:flex;align-items:center;gap:14px;padding:11px 26px}
+  .topnav .home{font-family:'Space Grotesk';font-weight:700;letter-spacing:-.01em;font-size:14px;color:var(--ink);text-decoration:none}
+  .topnav nav{margin-left:auto;display:flex;gap:6px}
+  .topnav a.tab{font-size:13px;font-weight:600;color:var(--muted);text-decoration:none;padding:7px 14px;border-radius:20px}
+  .topnav a.tab:hover{background:var(--lav)}
+  .topnav a.tab.active{background:var(--violet);color:#fff}
 
   .bhead{padding:32px 0 8px}
   .bhead .kick{font-size:11px;letter-spacing:.26em;text-transform:uppercase;font-weight:700;color:var(--violet)}
@@ -82,6 +89,11 @@
   .spectrum-motif div{flex:1}
   .dots{display:flex;gap:10px;margin-top:14px}
   .dots span{width:26px;height:26px;border-radius:50%}
+  .shapes{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+  .shapes div{width:50px;height:50px;border-radius:16px}
+  .dev-use{display:flex;gap:20px;margin-top:14px;flex-wrap:wrap}
+  .cat{display:inline-flex;align-items:center;gap:8px;font-family:'Space Grotesk';font-weight:600;font-size:15px;padding-bottom:6px;border-bottom:3px solid}
+  .cat .cd{width:9px;height:9px;border-radius:50%}
 
   /* UI kit */
   .kit{display:grid;grid-template-columns:1fr 1fr;gap:22px}
@@ -127,6 +139,7 @@
   .cl .ft{display:flex;align-items:center;gap:10px;padding:11px 13px;color:#fff}
   .cl .num{font-family:'Space Grotesk';font-weight:700;font-size:16px;opacity:.9}
   .cl .nm{font-family:'Space Grotesk';font-weight:600;font-size:16px}
+  .cl .desc{padding:12px 14px;background:#fff;font-size:12.5px;color:#5f5877;line-height:1.45}
   @media(max-width:860px){.grid{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:560px){.grid{grid-template-columns:1fr}}
 
@@ -153,6 +166,14 @@
 </style>
 </head>
 <body>
+<header class="topnav"><div class="in">
+  <a class="home" href="round-2.html">The Ballet Centre · Moodboards</a>
+  <nav>
+    <a class="tab" href="round-2.html">Home</a>
+    <a class="tab" href="purple-bold.html">Style 1 · Bold</a>
+    <a class="tab active" href="purple-spectrum.html">Style 2 · Spectrum</a>
+  </nav>
+</div></header>
 <div class="wrap">
 
   <div class="bhead">
@@ -254,14 +275,21 @@
     </div>
 
     <div class="panel">
-      <div class="lbl">Graphic device — the spectrum &amp; the dot</div>
+      <div class="lbl">Graphic device — spectrum bar, colour dot &amp; rounded tiles</div>
       <div class="spectrum-motif">
         <div style="background:var(--ballet)"></div><div style="background:var(--art)"></div><div style="background:var(--dance)"></div><div style="background:var(--drama)"></div><div style="background:var(--music)"></div><div style="background:var(--tkd)"></div>
       </div>
-      <div class="dots">
-        <span style="background:var(--ballet)"></span><span style="background:var(--dance)"></span><span style="background:var(--drama)"></span><span style="background:var(--music)"></span><span style="background:var(--tkd)"></span><span style="background:var(--art)"></span>
+      <div class="shapes">
+        <div style="background:var(--ballet)"></div><div style="background:var(--dance)"></div><div style="background:var(--drama)"></div><div style="background:var(--music)"></div><div style="background:var(--tkd)"></div><div style="background:var(--art)"></div>
       </div>
-      <p class="note">A thin spectrum bar and a colour dot flag which discipline you're looking at, across every page.</p>
+      <div class="lbl" style="margin-top:22px">The device in use — a coloured header per discipline</div>
+      <div class="dev-use">
+        <span class="cat" style="border-color:var(--ballet)"><span class="cd" style="background:var(--ballet)"></span>Ballet</span>
+        <span class="cat" style="border-color:var(--music)"><span class="cd" style="background:var(--music)"></span>Music</span>
+        <span class="cat" style="border-color:var(--tkd)"><span class="cd" style="background:var(--tkd)"></span>Taekwondo</span>
+        <span class="cat" style="border-color:var(--art)"><span class="cd" style="background:var(--art)"></span>Art</span>
+      </div>
+      <p class="note">A thin spectrum bar, a colour dot, rounded tiles and a coloured underline signal which discipline you're on — carried consistently across every page.</p>
     </div>
   </div>
 
@@ -309,19 +337,19 @@
           <div class="sb"><div style="background:var(--ballet)"></div><div style="background:var(--art)"></div><div style="background:var(--dance)"></div><div style="background:var(--drama)"></div><div style="background:var(--music)"></div><div style="background:var(--tkd)"></div></div>
           <div class="btns"><span class="b-v">Book a Free Trial</span><span class="b-o">Explore classes</span></div>
         </div>
-        <div class="hero-art"><img src="images/nat-studio-nat.png" alt="studio"></div>
+        <div class="hero-art"><img src="images/d-hero-v2.png" alt="dancer, spotlight duotone"></div>
       </div>
     </div>
 
     <div class="sample-tag">● Classes — natural photos, colour in the UI</div>
     <div class="frame" style="padding:26px 22px">
       <div class="grid">
-        <div class="cl"><div class="ph"><img src="images/nat-ballet-nat.png" alt="Ballet"></div><div class="ft" style="background:var(--ballet)"><span class="num">01</span><span class="nm">Ballet</span></div></div>
-        <div class="cl"><div class="ph"><img src="images/nat-studio-nat.png" alt="Dance"></div><div class="ft" style="background:var(--dance)"><span class="num">02</span><span class="nm">Dance</span></div></div>
-        <div class="cl"><div class="ph"><img src="images/nat-drama-nat.png" alt="Drama"></div><div class="ft" style="background:var(--drama)"><span class="num">03</span><span class="nm">Drama</span></div></div>
-        <div class="cl"><div class="ph"><img src="images/nat-music-nat.png" alt="Music"></div><div class="ft" style="background:var(--music)"><span class="num">04</span><span class="nm">Music</span></div></div>
-        <div class="cl"><div class="ph"><img src="images/nat-taekwondo-nat.png" alt="Taekwondo"></div><div class="ft" style="background:var(--tkd)"><span class="num">05</span><span class="nm">Taekwondo</span></div></div>
-        <div class="cl"><div class="ph"><img src="images/nat-art-nat.png" alt="Art"></div><div class="ft" style="background:var(--art)"><span class="num">06</span><span class="nm">Art</span></div></div>
+        <div class="cl"><div class="ph"><img src="images/nat-ballet-nat.png" alt="Ballet"></div><div class="ft" style="background:var(--ballet)"><span class="num">01</span><span class="nm">Ballet</span></div><div class="desc">ISTD graded classes that build grace, posture and discipline. From age 2.5.</div></div>
+        <div class="cl"><div class="ph"><img src="images/nat-studio-nat.png" alt="Dance"></div><div class="ft" style="background:var(--dance)"><span class="num">02</span><span class="nm">Dance</span></div><div class="desc">Modern and lyrical to street styles, building rhythm and expression. Ages 8+.</div></div>
+        <div class="cl"><div class="ph"><img src="images/nat-drama-nat.png" alt="Drama"></div><div class="ft" style="background:var(--drama)"><span class="num">03</span><span class="nm">Drama</span></div><div class="desc">Confidence on and off the stage, through play, voice and performance.</div></div>
+        <div class="cl"><div class="ph"><img src="images/nat-music-nat.png" alt="Music"></div><div class="ft" style="background:var(--music)"><span class="num">04</span><span class="nm">Music</span></div><div class="desc">Private and group lessons with optional Trinity College examinations.</div></div>
+        <div class="cl"><div class="ph"><img src="images/nat-taekwondo-nat.png" alt="Taekwondo"></div><div class="ft" style="background:var(--tkd)"><span class="num">05</span><span class="nm">Taekwondo</span></div><div class="desc">Black-belt instructors teaching focus, fitness and self-control. All levels.</div></div>
+        <div class="cl"><div class="ph"><img src="images/nat-art-nat.png" alt="Art"></div><div class="ft" style="background:var(--art)"><span class="num">06</span><span class="nm">Art</span></div><div class="desc">Paint, make and play — creativity and fine motor skills through hands-on art.</div></div>
       </div>
     </div>
 
