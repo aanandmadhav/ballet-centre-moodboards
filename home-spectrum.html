@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Ballet Centre — Home (Purple Spectrum)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--white:#FFFFFF;--ink:#160C24;--muted:#6a6280;--violet:#7C3AED;--lav:#F3EEFF;--line:#ece8f6;--wa:#25D366;
+    --ballet:#C724B1;--art:#A21CAF;--dance:#8B5CF6;--drama:#6D28D9;--music:#4F46E5;--tkd:#6366F1}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--white);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.5}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 26px}
+  h1,h2,h3,h4,.gro{font-family:'Space Grotesk'}
+  em.s{font-family:'Instrument Serif';font-style:italic;font-weight:400}
+
+  .rev{background:var(--ink);color:#fff;font-size:12px}
+  .rev .in{max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:12px;padding:8px 26px}
+  .rev b{font-weight:700;opacity:.85}
+  .rev .tabs{margin-left:auto;display:flex;gap:6px}
+  .rev a{padding:5px 12px;border-radius:20px;font-weight:600;color:rgba(255,255,255,.7)}
+  .rev a.on{background:var(--violet);color:#fff}.rev a:hover{color:#fff}
+
+  header.site{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  header.site .in{max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:24px;padding:13px 26px}
+  header.site img{height:46px}
+  header.site nav{display:flex;gap:22px;margin-left:10px;font-weight:500;font-size:14.5px;color:#3a3350}
+  header.site nav a:first-child{color:var(--violet);font-weight:600}
+  .hactions{margin-left:auto;display:flex;gap:10px;align-items:center}
+  .wabtn{display:inline-flex;align-items:center;gap:7px;font-weight:600;font-size:13px;color:var(--wa);border:1.5px solid #cfeede;padding:9px 14px;border-radius:10px}
+  .wabtn::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--wa)}
+  .b-v{background:var(--violet);color:#fff;font-weight:600;font-size:14px;padding:11px 20px;border-radius:12px;display:inline-block}
+  .b-o{background:#fff;color:var(--ink);font-weight:600;font-size:14px;padding:11px 20px;border-radius:12px;border:1.5px solid #e2dcf0;display:inline-block}
+  @media(max-width:860px){header.site nav{display:none}.wabtn{display:none}}
+
+  .hero{display:grid;grid-template-columns:1.02fr .98fr;gap:30px;align-items:center;padding:56px 0 40px}
+  .hero .eb{font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--violet);margin-bottom:18px}
+  .hero h1{font-weight:700;font-size:clamp(44px,6.2vw,76px);line-height:.98;letter-spacing:-.025em}
+  .hero h1 em{font-family:'Instrument Serif';font-style:italic;font-weight:400;background:linear-gradient(100deg,var(--ballet),var(--violet),var(--music));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p{margin:20px 0 22px;font-size:18px;color:#4a4363;max-width:470px}
+  .hero .sb{display:flex;height:10px;border-radius:10px;overflow:hidden;margin-bottom:24px;max-width:360px}
+  .hero .sb div{flex:1}
+  .hero .btns{display:flex;gap:12px;flex-wrap:wrap}
+  .hero-art{border-radius:26px;overflow:hidden;aspect-ratio:4/3}
+  .hero-art img{width:100%;height:100%;object-fit:cover}
+  @media(max-width:860px){.hero{grid-template-columns:1fr;padding:34px 0}}
+
+  .trustbar{border:1px solid var(--line);border-radius:20px;padding:18px 24px;display:flex;flex-wrap:wrap;gap:10px 24px;align-items:center;justify-content:center;font-weight:600;font-size:14px;color:#3a3350}
+  .trustbar .dot{width:6px;height:6px;border-radius:50%;background:var(--violet)}
+
+  section{padding:56px 0}
+  .eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--violet);margin-bottom:12px}
+  .sec-h{font-weight:700;font-size:clamp(32px,4.4vw,48px);line-height:1;letter-spacing:-.02em}
+  .sec-h em{font-family:'Instrument Serif';font-style:italic;font-weight:400}
+  .sec-lead{color:#5a5375;font-size:16.5px;max-width:620px;margin-top:14px}
+
+  .about{display:grid;grid-template-columns:.9fr 1.1fr;gap:34px;align-items:center}
+  .about img{width:100%;border-radius:22px;aspect-ratio:4/3;object-fit:cover}
+  @media(max-width:860px){.about{grid-template-columns:1fr}}
+
+  .classes .head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:30px}
+  .cgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .ccard{border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 8px 26px rgba(22,12,36,.07);transition:transform .16s,box-shadow .16s}
+  .ccard:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(88,28,180,.12)}
+  .ccard .ph{height:180px;overflow:hidden}.ccard .ph img{width:100%;height:100%;object-fit:cover}
+  .ccard .ft{display:flex;align-items:center;gap:10px;padding:11px 16px;color:#fff}
+  .ccard .num{font-family:'Space Grotesk';font-weight:700;font-size:16px;opacity:.9}
+  .ccard .nm{font-family:'Space Grotesk';font-weight:600;font-size:17px}
+  .ccard .bd{padding:16px 18px 20px}
+  .ccard p{font-size:13.5px;color:#5f5877}
+  .ccard .go{margin-top:10px;font-weight:600;font-size:13px}
+  @media(max-width:860px){.cgrid{grid-template-columns:repeat(2,1fr)}.classes .head{flex-direction:column;align-items:flex-start}}
+  @media(max-width:560px){.cgrid{grid-template-columns:1fr}}
+
+  .why{background:var(--lav);border-radius:28px;padding:48px 40px}
+  .whygrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px}
+  .wc{background:#fff;border-radius:18px;padding:22px 20px;border-top:4px solid var(--violet)}
+  .wc:nth-child(1){border-color:var(--ballet)}.wc:nth-child(2){border-color:var(--music)}.wc:nth-child(3){border-color:var(--drama)}.wc:nth-child(4){border-color:var(--tkd)}
+  .wc b{font-family:'Space Grotesk';font-weight:600;font-size:16px;display:block;margin-bottom:5px}
+  .wc p{font-size:13.5px;color:#5f5877}
+  @media(max-width:860px){.whygrid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.whygrid{grid-template-columns:1fr}}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .stat{border-radius:22px;padding:30px 26px;color:#fff}
+  .stat:nth-child(1){background:var(--ballet)}.stat:nth-child(2){background:var(--dance)}.stat:nth-child(3){background:var(--music)}.stat:nth-child(4){background:var(--tkd)}
+  .stat .n{font-family:'Space Grotesk';font-weight:700;font-size:50px;line-height:1;letter-spacing:-.02em}
+  .stat .l{font-size:14px;font-weight:500;opacity:.94;margin-top:6px}
+  @media(max-width:860px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+  .tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+  .tc{border:1px solid var(--line);border-radius:20px;padding:24px;display:flex;gap:16px;align-items:center}
+  .av{width:64px;height:64px;border-radius:50%;flex:0 0 auto;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Space Grotesk';font-weight:700;font-size:22px;background:var(--ballet)}
+  .tc:nth-child(2) .av{background:var(--music)}.tc:nth-child(3) .av{background:var(--drama)}
+  .tc b{font-family:'Space Grotesk';font-weight:600;font-size:18px;display:block}
+  .tc span{font-size:13px;color:var(--muted)}
+  @media(max-width:860px){.tgrid{grid-template-columns:1fr}}
+
+  .ngrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+  .nc{border-radius:18px;overflow:hidden;border:1px solid var(--line)}
+  .nc img{width:100%;height:160px;object-fit:cover;display:block}
+  .nc .bd{padding:18px 20px 22px}
+  .nc .tag{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+  .nc h4{font-family:'Space Grotesk';font-weight:600;font-size:17px;margin:8px 0 0;line-height:1.25}
+  @media(max-width:860px){.ngrid{grid-template-columns:1fr}}
+
+  .quote{border:1px solid var(--line);border-left:5px solid var(--violet);border-radius:20px;padding:40px 44px;max-width:900px;margin:0 auto}
+  .quote .q{font-family:'Instrument Serif';font-style:italic;font-size:clamp(22px,3vw,30px);line-height:1.4}
+  .quote .by{font-weight:600;font-size:14px;margin-top:16px;color:var(--muted)}
+
+  .cta{border-radius:28px;padding:52px 44px;display:grid;grid-template-columns:1.3fr .7fr;gap:24px;align-items:center;background:linear-gradient(120deg,var(--drama),var(--violet),var(--ballet));color:#fff}
+  .cta h2{font-weight:700;font-size:clamp(30px,4vw,44px);line-height:1;letter-spacing:-.02em}
+  .cta h2 em{font-family:'Instrument Serif';font-style:italic;font-weight:400}
+  .cta p{color:rgba(255,255,255,.85);margin-top:12px;font-size:15px}
+  .cta .btns{display:flex;flex-direction:column;gap:12px}
+  .cta .b-w{background:#fff;color:var(--violet);font-weight:600;font-size:15px;padding:15px 24px;border-radius:12px;text-align:center}
+  .cta .b-g2{background:rgba(255,255,255,.16);color:#fff;font-weight:600;font-size:15px;padding:15px 24px;border-radius:12px;text-align:center}
+  @media(max-width:860px){.cta{grid-template-columns:1fr}}
+
+  footer.site{background:#0f0a17;color:#fff;padding:56px 0 30px;margin-top:40px}
+  .fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:30px}
+  footer.site img{height:46px;filter:brightness(0) invert(1);margin-bottom:14px}
+  footer.site p,footer.site a{color:rgba(255,255,255,.66);font-size:14px;line-height:1.9}
+  footer.site h5{font-family:'Space Grotesk';font-weight:600;font-size:14px;margin-bottom:10px}
+  footer.site .col a{display:block}
+  .fspectrum{display:flex;gap:5px;margin-top:14px}.fspectrum span{width:16px;height:16px;border-radius:50%}
+  .fbot{border-top:1px solid rgba(255,255,255,.12);margin-top:36px;padding-top:20px;font-size:12.5px;color:rgba(255,255,255,.5);display:flex;gap:16px;flex-wrap:wrap}
+  @media(max-width:860px){.fgrid{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.fgrid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="rev"><div class="in">
+  <b>Home page preview</b>
+  <div class="tabs">
+    <a href="home-bold.html">Bold</a>
+    <a class="on" href="home-spectrum.html">Spectrum</a>
+    <a href="round-2.html">← Moodboards</a>
+  </div>
+</div></div>
+
+<header class="site"><div class="in">
+  <img src="images/logo.webp" alt="The Ballet Centre">
+  <nav><a>Classes</a><a>Timetable</a><a>About</a><a>Teachers</a><a>Contact</a></nav>
+  <div class="hactions">
+    <a class="wabtn">WhatsApp</a>
+    <a class="b-v">Book a Free Trial</a>
+  </div>
+</div></header>
+
+<div class="wrap">
+  <!-- HERO -->
+  <div class="hero">
+    <div>
+      <div class="eb">The UAE's oldest dance school · Since 1985</div>
+      <h1>Find the colour of <em>their talent.</em></h1>
+      <p>Six disciplines, one stage. Ballet, dance, drama, music, taekwondo and art in Dubai — each with its own place to shine, for ages 2.5 to adult.</p>
+      <div class="sb"><div style="background:var(--ballet)"></div><div style="background:var(--art)"></div><div style="background:var(--dance)"></div><div style="background:var(--drama)"></div><div style="background:var(--music)"></div><div style="background:var(--tkd)"></div></div>
+      <div class="btns"><a class="b-v">Book a Free Trial</a><a class="b-o">Explore classes</a></div>
+    </div>
+    <div class="hero-art"><img src="images/d-hero-v2.png" alt="dancer, spotlight duotone"></div>
+  </div>
+
+  <!-- TRUST -->
+  <div class="trustbar">
+    <span class="dot"></span><span>KHDA Approved</span><span class="dot"></span><span>RAD Ballet</span><span class="dot"></span><span>ISTD Tap &amp; Modern</span><span class="dot"></span><span>ITF Taekwondo</span><span class="dot"></span><span>Trinity &amp; ABRSM Music</span>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about">
+    <img src="images/nat-studio-nat.png" alt="studio">
+    <div>
+      <div class="eyebrow">Since 1985</div>
+      <h2 class="sec-h">Forty years of <em>performing arts</em>, one trusted home.</h2>
+      <p class="sec-lead">Founded in Dubai as the UAE's very first dance school, The Ballet Centre has spent four decades nurturing students into confident, world-class performers. Ballet is where it began — today, one enrolment opens the door to six disciplines and a whole community.</p>
+    </div>
+  </section>
+
+  <!-- CLASSES -->
+  <section class="classes">
+    <div class="head">
+      <div><div class="eyebrow">Six ways to shine</div><h2 class="sec-h">Our classes</h2></div>
+      <a class="b-o">View full timetable</a>
+    </div>
+    <div class="cgrid">
+      <div class="ccard"><div class="ph"><img src="images/nat-ballet-nat.png" alt="Ballet"></div><div class="ft" style="background:var(--ballet)"><span class="num">01</span><span class="nm">Ballet</span></div><div class="bd"><p>The foundation for every dance form — the most disciplined, the most rewarding. RAD graded, from age 2.5.</p><div class="go" style="color:var(--ballet)">Learn more →</div></div></div>
+      <div class="ccard"><div class="ph"><img src="images/nat-studio-nat.png" alt="Dance"></div><div class="ft" style="background:var(--dance)"><span class="num">02</span><span class="nm">Modern Dance</span></div><div class="bd"><p>A varied form from lyrical to funky and everything in between. ISTD tap and modern too.</p><div class="go" style="color:var(--dance)">Learn more →</div></div></div>
+      <div class="ccard"><div class="ph"><img src="images/nat-drama-nat.png" alt="Drama"></div><div class="ft" style="background:var(--drama)"><span class="num">03</span><span class="nm">Drama</span></div><div class="bd"><p>A fun way for children to build confidence and concentration through performance and play.</p><div class="go" style="color:var(--drama)">Learn more →</div></div></div>
+      <div class="ccard"><div class="ph"><img src="images/nat-music-nat.png" alt="Music"></div><div class="ft" style="background:var(--music)"><span class="num">04</span><span class="nm">Music</span></div><div class="bd"><p>Piano, violin, flute and guitar with qualified teachers. Private or group, Trinity &amp; ABRSM.</p><div class="go" style="color:var(--music)">Learn more →</div></div></div>
+      <div class="ccard"><div class="ph"><img src="images/nat-taekwondo-nat.png" alt="Taekwondo"></div><div class="ft" style="background:var(--tkd)"><span class="num">05</span><span class="nm">Taekwondo</span></div><div class="bd"><p>Taught by professional ITF black belts, from babies to advanced. Focus, fitness and self-control.</p><div class="go" style="color:var(--tkd)">Learn more →</div></div></div>
+      <div class="ccard"><div class="ph"><img src="images/nat-art-nat.png" alt="Art"></div><div class="ft" style="background:var(--art)"><span class="num">06</span><span class="nm">Art</span></div><div class="bd"><p>Painting classes where kids grow creativity, make friends and enjoy playful, hands-on activities.</p><div class="go" style="color:var(--art)">Learn more →</div></div></div>
+    </div>
+    <p style="margin-top:20px;font-size:14px;color:var(--muted)">Plus adult classes — yoga, belly dance, tap, contemporary, ballet and taekwondo. Everyone's welcome.</p>
+  </section>
+
+  <!-- WHY -->
+  <section>
+    <div class="why">
+      <div class="eyebrow">Why families choose us</div>
+      <h2 class="sec-h">Every child finds <em>their</em> spotlight.</h2>
+      <div class="whygrid">
+        <div class="wc"><b>KHDA approved</b><p>A licensed, regulated school with yearly RAD and ISTD examinations.</p></div>
+        <div class="wc"><b>Flexible plans</b><p>Payment plans that work around your family, with free trial classes.</p></div>
+        <div class="wc"><b>Shows &amp; comps</b><p>Yearly shows, competitions and local UAE events to perform at.</p></div>
+        <div class="wc"><b>Six under one roof</b><p>Try one class or many — most families end up loving more than one.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section>
+    <div class="stats">
+      <div class="stat"><div class="n">40</div><div class="l">years · since 1985</div></div>
+      <div class="stat"><div class="n">1,000+</div><div class="l">students &amp; counting</div></div>
+      <div class="stat"><div class="n">200</div><div class="l">classes every week</div></div>
+      <div class="stat"><div class="n">15</div><div class="l">expert teachers</div></div>
+    </div>
+  </section>
+
+  <!-- TEACHERS -->
+  <section>
+    <div class="eyebrow">The people</div>
+    <h2 class="sec-h">Taught by specialists, not stand-ins.</h2>
+    <div class="tgrid">
+      <div class="tc"><div class="av">MJ</div><div><b>Mangalika Jayalath</b><span>Proprietor</span></div></div>
+      <div class="tc"><div class="av">TK</div><div><b>Tala Kudrya</b><span>Lead Teacher</span></div></div>
+      <div class="tc"><div class="av">RG</div><div><b>Ravien Prakash George</b><span>Head of Music</span></div></div>
+    </div>
+    <p style="margin-top:18px;font-size:14px;color:var(--muted)">…and a team of 15 across dance, drama, music, taekwondo and art. <a style="color:var(--violet);font-weight:600">Meet everyone →</a></p>
+  </section>
+
+  <!-- NEWS -->
+  <section>
+    <div class="eyebrow">News &amp; events</div>
+    <h2 class="sec-h">What's happening</h2>
+    <div class="ngrid">
+      <div class="nc"><img src="images/nat-art-nat.png" alt=""><div class="bd"><div class="tag" style="color:var(--art)">Art</div><h4>How children's art classes affect their development</h4></div></div>
+      <div class="nc"><img src="images/nat-music-nat.png" alt=""><div class="bd"><div class="tag" style="color:var(--music)">Music</div><h4>Why the flute is an incredible instrument to learn</h4></div></div>
+      <div class="nc"><img src="images/nat-drama-nat.png" alt=""><div class="bd"><div class="tag" style="color:var(--drama)">Drama</div><h4>Future stage stars start with LAMDA classes</h4></div></div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section>
+    <div class="quote">
+      <div class="q">“She found her thing here. The stage confidence carries into everything else she does — school, friends, all of it.”</div>
+      <div class="by">— A Ballet Centre parent, Dubai</div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section>
+    <div class="cta">
+      <div>
+        <h2>Your child's first class is <em>free.</em></h2>
+        <p>Book a free trial or message us on WhatsApp — subject to class availability. New term places fill fast.</p>
+      </div>
+      <div class="btns"><a class="b-w">Book a Free Trial</a><a class="b-g2">WhatsApp +971 50 694 9776</a></div>
+    </div>
+  </section>
+</div>
+
+<!-- FOOTER -->
+<footer class="site"><div class="wrap">
+  <div class="fgrid">
+    <div>
+      <img src="images/logo.webp" alt="The Ballet Centre">
+      <p>The UAE's first and oldest dance school. Performing Art School, Dubai — since 1985.</p>
+      <div class="fspectrum"><span style="background:var(--ballet)"></span><span style="background:var(--dance)"></span><span style="background:var(--drama)"></span><span style="background:var(--music)"></span><span style="background:var(--tkd)"></span><span style="background:var(--art)"></span></div>
+    </div>
+    <div class="col"><h5>Classes</h5><a>Ballet</a><a>Modern Dance</a><a>Drama</a><a>Music</a><a>Taekwondo</a><a>Art</a><a>Adult classes</a></div>
+    <div class="col"><h5>Visit</h5><a>Timetable</a><a>About us</a><a>Teachers</a><a>News</a><a>Book a free trial</a></div>
+    <div class="col">
+      <h5>Contact</h5>
+      <a>+971 4 344 9776</a>
+      <a>WhatsApp +971 50 694 9776</a>
+      <a>balletct@emirates.net.ae</a>
+      <p>P.O. Box 72145, Dubai, UAE<br>2 branches · Sun–Sat, 8:00am–8:00pm</p>
+    </div>
+  </div>
+  <div class="fbot">
+    <span>© The Ballet Centre · Est 1986 · KHDA approved</span>
+    <span style="margin-left:auto">YouTube · Facebook · Instagram</span>
+  </div>
+</div></footer>
+
+</body>
+</html>
